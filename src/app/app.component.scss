@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.title {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.grid {
+  width: 100%;
+  height: 500px;
+  max-width: 1000px;
+}
+
+.toolbar {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: space-between;
+
+  &-selected {
+    margin-left: auto;
+    padding-right: 10px;
+  }
+}

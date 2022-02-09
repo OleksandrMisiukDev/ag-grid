@@ -1,0 +1,23 @@
+<div class="wrapper container">
+  <h1 class="title">Ag Grid</h1>
+  <div class="toolbar">
+    <button (click)="toggleSelectionMode()" id="toolbarButton">Toggle Selection mode</button>
+    <div *ngIf="isSelectionEnable" class="toolbar-selected">Selected records count: {{ recordsCount }}</div>
+    <div>Total count of records: {{ totalCountOfRecords }}</div>
+  </div>
+  <ag-grid-angular
+    #agGrid
+    id="myGrid"
+    class="ag-theme-alpine grid"
+    [rowData]="rowData$ | async"
+    [columnDefs]="columnDefs"
+    [defaultColDef]="defaultColDef"
+    [rowHeight]="defaultRowHeight"
+    [rowSelection]="rowSelection"
+    [suppressRowClickSelection]="suppressRowClickSelection"
+    [getContextMenuItems]="getContextMenuItems"
+    (selectionChanged)="onSelectionChanged($event)"
+    (gridReady)="onGridReady($event)"
+  >
+  </ag-grid-angular>
+</div>
